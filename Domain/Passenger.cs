@@ -21,5 +21,34 @@ namespace Am.Applicationcore.Domain
             return "PassportNumber:"+ PassportNumber+ "FirstName:" + FirstName+ "LastName:" + LastName+ "BirthDate:" + BirthDate+ "TelNumber:" + TelNumber + "EmailAddress:"+ EmailAddress+ "Flights:"+ Flights
                 ;
         }
+
+        public bool CheckProfile(string firstName, string lastName)
+        {
+            return FirstName.Equals(firstName) && LastName.Equals(lastName);
+            //return FirstName==firstName && LastName==fastName;
+        }
+
+        public bool CheckProfile(string firstName, string lastName, string email)
+        {
+            return FirstName == firstName && LastName == lastName && EmailAddress==email;
+        }
+
+        public bool login(string firstName, string lastName, string email=null)
+        {
+            if (email!=null)
+                return CheckProfile(firstName, lastName,email);
+               //return FirstName == firstName && LastName == lastName && EmailAddress == email;
+            return FirstName == firstName && LastName == lastName;
+
+        }
+        
+        public virtual void PassengerType()
+        {
+            Console.WriteLine("i am passenger");
+        }
+
+
+
+
     }
 }

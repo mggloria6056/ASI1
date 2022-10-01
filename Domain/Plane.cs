@@ -23,5 +23,18 @@ namespace Am.Applicationcore.Domain
         {
             return "capacity:" +Capacity+ "ManufactureDate:" + ManufactureDate+ "PlaneId:"+ PlaneId+ "Flights:"+ Flights;
         }
+
+        public Plane( int capacity, DateTime manufactureDate,  PlaneType planeType)
+        {
+           
+            Capacity = capacity;
+            ManufactureDate = manufactureDate;
+            PlaneType = planeType;
+           
+        }
+
+        public Plane()
+        {
+        }
     }
 }
